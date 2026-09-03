@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: 'Nunito', 'Noto Sans Devanagari', sans-serif;
+}
+
+@theme inline {
+  --color-primary: #1B6CA8;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #0A9E74;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #FF6B35;
+  --color-accent-foreground: #ffffff;
+  --color-background: #EEF5FC;
+  --color-foreground: #1A2332;
+  --color-card: #ffffff;
+  --color-card-foreground: #1A2332;
+  --color-muted: #D8E8F4;
+  --color-muted-foreground: #5A7896;
+  --color-border: #C5DCF0;
+  --color-ring: #1B6CA8;
+  --color-destructive: #E53E3E;
+  --color-emergency: #DC2626;
+
+  --font-sans: 'Nunito', 'Noto Sans Devanagari', sans-serif;
+  --font-heading: 'Poppins', 'Nunito', sans-serif;
+
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EEF5FC;
+  color: #1A2332;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C5DCF0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1B6CA8; }
+
+/* Pulse animation for emergency */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+@keyframes float-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chat-slide {
+  0% { opacity: 0; transform: translateX(32px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+}
+
+.animate-float-up { animation: float-up 0.4s ease forwards; }
+.animate-chat-slide { animation: chat-slide 0.35s ease forwards; }
+.animate-blink { animation: blink 1s infinite; }
+.animate-wave-1 { animation: wave 1.2s ease-in-out infinite; }
+.animate-wave-2 { animation: wave 1.2s ease-in-out 0.2s infinite; }
+.animate-wave-3 { animation: wave 1.2s ease-in-out 0.4s infinite; }
+
+.emergency-pulse { animation: pulse-ring 1.5s ease-out infinite; }
+
+/* Large touch targets for accessibility */
+.touch-target { min-height: 52px; min-width: 52px; }
+
+/* Focus ring for keyboard nav */
+:focus-visible {
+  outline: 3px solid #1B6CA8;
+  outline-offset: 2px;
+}

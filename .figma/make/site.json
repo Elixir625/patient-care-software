@@ -1,0 +1,10 @@
+{
+  "description": "MediKiosk streamlines patient care with multilingual AI-driven history interviews, secure document digitization, and structured summaries for efficient consultations.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
